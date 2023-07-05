@@ -2,6 +2,15 @@
   <text>123</text>
 </template>
 
+<script>
+
+
+export default ({
+  
+})
+</script>
+
+
 <style lang="less">
 html,
 body,
