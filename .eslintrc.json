@@ -1,17 +1,18 @@
 {
   "env": {
-      "browser": true,
-      "commonjs": true,
-      "es2021": true,
-      "@edgeros/jsre/jsre": true
+      "es2021": true
   },
-  "extends": [],
+  "extends": [
+      "standard"
+  ],
+  "parser": "@typescript-eslint/parser",
   "parserOptions": {
-      "ecmaVersion": 12
+      "ecmaVersion": 12,
+      "sourceType": "module"
   },
-  "rules": {},
-  "root": true,
   "plugins": [
-      "@edgeros/jsre"
-  ]
+      "@typescript-eslint"
+  ],
+  "rules": {
+  }
 }

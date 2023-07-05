@@ -1,17 +1,19 @@
 {
     "name": "edgeros-music-player",
-    "bundleid": "com.example.nuaagroup04",
+    "bundleid": "com.example.nuaa04",
     "ignore_modules": [
         "@edgeros/eslint-plugin-jsre",
         "@edgeros/jsre-types"
     ],
     "ignore_path": [
         "./test/**",
-        "./temp/**"
+        "./temp/**",
+        "src/**"
     ],
     "assets": {
         "ico_big": "assets/big.png",
         "ico_small": "assets/small.png",
+        "ico_widget": "assets/widget.png",
         "splash": "assets/splash.png"
     },
     "program": {
@@ -19,9 +21,13 @@
         "log": "console",
         "will": false,
         "reside": false,
-        "mesv": "1.3.7",
-        "experimental": false,
-        "resource": "public"
+        "mesv": "1.4.3",
+        "experimental": false
+    },
+    "loading": {
+        "splash": "splash",
+        "background": "#000000",
+        "animation": "enlarge"
     },
     "vendor": {
         "id": "1000192",
@@ -30,14 +36,19 @@
         "phone": "",
         "fax": ""
     },
-    "loading": {
-        "splash": "splash",
-        "background": "#000000",
-        "animation": "enlarge"
-    },
     "update": {
         "remove": [
             "public"
         ]
-    }
+    },
+    "widget": [
+        {
+            "ico": "ico_widget",
+            "name": "My Widget",
+            "path": "widget",
+            "rows": 2,
+            "columns": 2,
+            "category": "Demo"
+        }
+    ]
 }
