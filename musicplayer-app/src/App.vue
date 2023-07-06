@@ -1,35 +1,54 @@
 <template>
-  <div style="position: relative; width:100%; height: 20%;">
-    <van-button style="width:70%; height:50%"></van-button>
+  <div style="position: relative; width:100%; height: 70%;">
+    <van-button style="width:70%; height:14.28%"></van-button>
     <br>
-    <van-button style="width:70%; height:100%"></van-button>
+    <van-button style="width:70%; height:14.28%"></van-button>
     <br>
-    <van-button style="width:40%; height:50%; position: absolute; left: 30%; top: 25%;" color="black"></van-button>
-  </div>
-  <br>
-  <van-button class="whitekey"></van-button>
-  <br>
-  <van-button class="whitekey"></van-button>
-  <br>
-  <van-button class="whitekey"></van-button>
-  <br>
-  <van-button class="whitekey"></van-button>
-  <br>
-  <van-button class="whitekey"></van-button>
-  <br>
-  <van-button class="whitekey"></van-button>
-  <br>
-  <van-button class="whitekey"></van-button>
-  <br>
-  <van-button class="whitekey"></van-button>
-  <br>
-  <van-button class="whitekey"></van-button>
-  <br>
-  <van-button class="whitekey"></van-button>
-  <br>
-  <van-button class="whitekey"></van-button>
-  <br>
-  <van-button class="whitekey"></van-button>
+    <van-button style="width:70%; height:14.28%"></van-button>
+    <br>
+    <van-button style="width:70%; height:14.28%"></van-button>
+    <br>
+    <van-button style="width:70%; height:14.28%"></van-button>
+    <br>
+    <van-button style="width:70%; height:14.28%"></van-button>
+    <br>
+    <van-button style="width:70%; height:14.28%"></van-button>    
+    <van-button style="width:40%; height:10%; 
+    position: absolute; left: 30%; top: 9%;" color="black"></van-button>
+    <van-button style="width:40%; height:10%; 
+    position: absolute; left: 30%; top: 24%;" color="black"></van-button>  
+    <van-button style="width:40%; height:10%; 
+    position: absolute; left: 30%; top: 52%;" color="black"></van-button>  
+     <van-button style="width:40%; height:10%; 
+    position: absolute; left: 30%; top: 66%;" color="black"></van-button>  
+     <van-button style="width:40%; height:10%; 
+    position: absolute; left: 30%; top: 81%;" color="black"></van-button>  
+</div>
+<div style="position: relative; width:100%; height: 70%;">
+    <van-button style="width:70%; height:14.28%"></van-button>
+    <br>
+    <van-button style="width:70%; height:14.28%"></van-button>
+    <br>
+    <van-button style="width:70%; height:14.28%"></van-button>
+    <br>
+    <van-button style="width:70%; height:14.28%"></van-button>
+    <br>
+    <van-button style="width:70%; height:14.28%"></van-button>
+    <br>
+    <van-button style="width:70%; height:14.28%"></van-button>
+    <br>
+    <van-button style="width:70%; height:14.28%"></van-button>    
+    <van-button style="width:40%; height:10%; 
+    position: absolute; left: 30%; top: 9%;" color="black"></van-button>
+    <van-button style="width:40%; height:10%; 
+    position: absolute; left: 30%; top: 24%;" color="black"></van-button>  
+    <van-button style="width:40%; height:10%; 
+    position: absolute; left: 30%; top: 52%;" color="black"></van-button>  
+     <van-button style="width:40%; height:10%; 
+    position: absolute; left: 30%; top: 66%;" color="black"></van-button>  
+     <van-button style="width:40%; height:10%; 
+    position: absolute; left: 30%; top: 81%;" color="black"></van-button>  
+</div>
   <van-tabbar v-model="active">
     <van-tabbar-item icon="music-o">弹奏</van-tabbar-item>
     <van-tabbar-item icon="play-circle-o">播放</van-tabbar-item>
