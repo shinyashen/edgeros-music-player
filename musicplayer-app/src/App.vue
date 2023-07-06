@@ -1,58 +1,8 @@
 <template>
   <router-view></router-view>
-  <div style="position: relative; width:100%; height: 70%;">
-    <van-button style="width:70%; height:14.28%"></van-button>
-    <br>
-    <van-button style="width:70%; height:14.28%"></van-button>
-    <br>
-    <van-button style="width:70%; height:14.28%"></van-button>
-    <br>
-    <van-button style="width:70%; height:14.28%"></van-button>
-    <br>
-    <van-button style="width:70%; height:14.28%"></van-button>
-    <br>
-    <van-button style="width:70%; height:14.28%"></van-button>
-    <br>
-    <van-button style="width:70%; height:14.28%"></van-button>    
-    <van-button style="width:40%; height:10%; 
-    position: absolute; left: 30%; top: 9%;" class="blackkey"></van-button>
-    <van-button style="width:40%; height:10%; 
-    position: absolute; left: 30%; top: 24%;" class="blackkey"></van-button>  
-    <van-button style="width:40%; height:10%; 
-    position: absolute; left: 30%; top: 52%;" class="blackkey"></van-button>  
-     <van-button style="width:40%; height:10%; 
-    position: absolute; left: 30%; top: 66%;" class="blackkey"></van-button>  
-     <van-button style="width:40%; height:10%; 
-    position: absolute; left: 30%; top: 81%;" class="blackkey"></van-button>  
-</div>
-<div style="position: relative; width:100%; height: 70%;">
-    <van-button style="width:70%; height:14.28%"></van-button>
-    <br>
-    <van-button style="width:70%; height:14.28%"></van-button>
-    <br>
-    <van-button style="width:70%; height:14.28%"></van-button>
-    <br>
-    <van-button style="width:70%; height:14.28%"></van-button>
-    <br>
-    <van-button style="width:70%; height:14.28%"></van-button>
-    <br>
-    <van-button style="width:70%; height:14.28%"></van-button>
-    <br>
-    <van-button style="width:70%; height:14.28%"></van-button>    
-    <van-button style="width:40%; height:10%; 
-    position: absolute; left: 30%; top: 9%;" class="blackkey"></van-button>
-    <van-button style="width:40%; height:10%; 
-    position: absolute; left: 30%; top: 24%;" class="blackkey"></van-button>  
-    <van-button style="width:40%; height:10%; 
-    position: absolute; left: 30%; top: 52%;" class="blackkey"></van-button>  
-     <van-button style="width:40%; height:10%; 
-    position: absolute; left: 30%; top: 66%;" class="blackkey"></van-button>  
-     <van-button style="width:40%; height:10%; 
-    position: absolute; left: 30%; top: 81%;" class="blackkey"></van-button>  
-</div>
   <van-tabbar route>
-    <van-tabbar-item to="/app" icon="music-o">弹奏</van-tabbar-item>
-    <van-tabbar-item to="/about" icon="play-circle-o">播放</van-tabbar-item>
+    <van-tabbar-item to="/home" icon="music-o">弹奏</van-tabbar-item>
+    <van-tabbar-item to="/play" icon="play-circle-o">播放</van-tabbar-item>
   </van-tabbar>
 </template>
 
@@ -64,7 +14,6 @@ import 'vant/lib/index.css'
 
 export default ({
   components: {
-    [Button.name]: Button,
     [Tabbar.name]: Tabbar,
     [TabbarItem.name]: TabbarItem,
   },
@@ -75,26 +24,3 @@ export default ({
 })
 </script>
 
-
-<style lang="less">
-html,
-body,
-#app {
-  height: 100%;
-  background: linear-gradient(to right, #B2B9BE, #2F4052);
-}
-
-.whitekey {
-  width: 70%;
-  height: 10%;
-  color: white;
-}
-
-.blackkey{
-  background: black;
-}
-
-.blackkey:active{
-  background: rgb(80, 80, 80);
-}
-</style>
