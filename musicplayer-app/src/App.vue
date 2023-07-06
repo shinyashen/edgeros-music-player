@@ -1,4 +1,5 @@
 <template>
+  <router-view></router-view>
   <div style="position: relative; width:100%; height: 70%;">
     <van-button style="width:70%; height:14.28%"></van-button>
     <br>
@@ -14,15 +15,15 @@
     <br>
     <van-button style="width:70%; height:14.28%"></van-button>    
     <van-button style="width:40%; height:10%; 
-    position: absolute; left: 30%; top: 9%;" color="black"></van-button>
+    position: absolute; left: 30%; top: 9%;" class="blackkey"></van-button>
     <van-button style="width:40%; height:10%; 
-    position: absolute; left: 30%; top: 24%;" color="black"></van-button>  
+    position: absolute; left: 30%; top: 24%;" class="blackkey"></van-button>  
     <van-button style="width:40%; height:10%; 
-    position: absolute; left: 30%; top: 52%;" color="black"></van-button>  
+    position: absolute; left: 30%; top: 52%;" class="blackkey"></van-button>  
      <van-button style="width:40%; height:10%; 
-    position: absolute; left: 30%; top: 66%;" color="black"></van-button>  
+    position: absolute; left: 30%; top: 66%;" class="blackkey"></van-button>  
      <van-button style="width:40%; height:10%; 
-    position: absolute; left: 30%; top: 81%;" color="black"></van-button>  
+    position: absolute; left: 30%; top: 81%;" class="blackkey"></van-button>  
 </div>
 <div style="position: relative; width:100%; height: 70%;">
     <van-button style="width:70%; height:14.28%"></van-button>
@@ -39,19 +40,19 @@
     <br>
     <van-button style="width:70%; height:14.28%"></van-button>    
     <van-button style="width:40%; height:10%; 
-    position: absolute; left: 30%; top: 9%;" color="black"></van-button>
+    position: absolute; left: 30%; top: 9%;" class="blackkey"></van-button>
     <van-button style="width:40%; height:10%; 
-    position: absolute; left: 30%; top: 24%;" color="black"></van-button>  
+    position: absolute; left: 30%; top: 24%;" class="blackkey"></van-button>  
     <van-button style="width:40%; height:10%; 
-    position: absolute; left: 30%; top: 52%;" color="black"></van-button>  
+    position: absolute; left: 30%; top: 52%;" class="blackkey"></van-button>  
      <van-button style="width:40%; height:10%; 
-    position: absolute; left: 30%; top: 66%;" color="black"></van-button>  
+    position: absolute; left: 30%; top: 66%;" class="blackkey"></van-button>  
      <van-button style="width:40%; height:10%; 
-    position: absolute; left: 30%; top: 81%;" color="black"></van-button>  
+    position: absolute; left: 30%; top: 81%;" class="blackkey"></van-button>  
 </div>
-  <van-tabbar v-model="active">
-    <van-tabbar-item icon="music-o">弹奏</van-tabbar-item>
-    <van-tabbar-item icon="play-circle-o">播放</van-tabbar-item>
+  <van-tabbar route>
+    <van-tabbar-item to="/app" icon="music-o">弹奏</van-tabbar-item>
+    <van-tabbar-item to="/about" icon="play-circle-o">播放</van-tabbar-item>
   </van-tabbar>
 </template>
 
@@ -89,13 +90,11 @@ body,
   color: white;
 }
 
-.blackkey {
-  position: absolute;
-  top: 50%;
-  left: 40%;
-  width: 30%;
-  height: 7%;
-  color: black !important;
-  transform: translateX(-10%);
+.blackkey{
+  background: black;
+}
+
+.blackkey:active{
+  background: rgb(80, 80, 80);
 }
 </style>
