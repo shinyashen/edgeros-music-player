@@ -1,5 +1,5 @@
 <template>
-  <router-view></router-view>
+  <router-view style="height:100%"></router-view>
   <van-tabbar route>
     <van-tabbar-item to="/home" icon="music-o">弹奏</van-tabbar-item>
     <van-tabbar-item to="/play" icon="play-circle-o">播放</van-tabbar-item>
