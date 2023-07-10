@@ -1,29 +1,35 @@
-# tpl-typescript
+# edgeos-music-player
 
-EdgerOS app template of TypeScript.
+本项目开发实现了一个电子琴应用，主要实现了“演奏”、“录音”、“播放音乐”等多种功能。小组使用ESP32开发板和无源蜂鸣器完成发声功能，vue3实现前端页面开发，Arduino实现后端开发，并部署到EdgerOS边缘云设备。通过前后端、软硬件之间的通信完成了应用可以通过 ESP32开发板控制无源蜂鸣器的频率使其发出不同的声音，用户可以通 过爱智App进行音乐的演奏的全过程。
 
-## Usage
+## 前端
 
-### Install:
+主要使用vue3和vant进行开发。
 
-- `git clone git@github.com:edgeros/tpl-typescript.git`
-- select 'TypeScript' template when [create project from VSCode](https://marketplace.visualstudio.com/items?itemName=edgeros.edgeros)
-- select 'TypeScript' template when create project via CLI (TBD)
+### 1. 演奏
 
-Remember to **`npm install` before you start**
+当用户按下钢琴键后，前端由钢琴键编号于存储对应关系的map中获取对应的频率，发送给后端。 在页面的右上角，还设置了滑块组件，用户可以通过拖动组件两端的滑块进行音阶的选取。滑块改动后，页面中就会只显示对应的音阶。
 
-### Compile
+### 2. 录音
 
-Remember to **compile the TypeScript before uploading**. By default `dist` will be the output folder, and we build the EdgerOS app from there too.
+- 当用户开始录音后，录音按钮变为停止按钮并记录用户点击键盘的顺序，并存储到localstorage；
+- 用户点击停止按钮后会停止录音；
+- 同时，localstorage中的数据会被发送到后端。保证刷 新页面后录音不会丢失；
+- 用户可以通过点击播放按钮回放录音，同时也可以通过点击删除按钮来删除录音；
+- 当没有录音可以播放或者删除时，会有弹窗警告。
 
-```shell
-npm run compile
-```
+## 后端
 
-### ESLint
+使用Arduino对esp32相关固件进行开发，相关控制代码在back-end文件夹中。
 
-Enforce code style and locate problems.
+### 1. 演奏
 
-```shell
-npm run lint
-```
+当用户按下页面中不同的琴键后，前端会生成相应的音调即频率对应的数字代码报文传到后端，后端通过socket收到报文段后给esp32开发板发相应的报文控制蜂鸣器发出对应的声音。
+
+### 2. 录音
+
+录音结束后，前端会将实现记下的按键顺序打包发到后端。用户在前端点击播放时，后端收到请求将数据依次传给esp32开发板，控制蜂鸣器演奏录制的音乐。同时，也实现了删除录音的功能。
+
+### 3. 内置乐曲播放
+
+将处理好的歌曲的频率和节拍数组写入esp32开发板， 后端通过socket接收到前端选中的歌曲对应序号报文后， 向esp开发板发送报文，控制esp32开发板通过蜂鸣器播放音乐。

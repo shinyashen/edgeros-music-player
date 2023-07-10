@@ -1,3 +1,97 @@
-<html>
-  <body style="background: #fff;">Hello world!</body>
+<!DOCTYPE html>
+<html lang="">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <!--[if IE]><link rel="icon" href="/favicon.ico"><![endif]-->
+    <title>musicplayer-app</title>
+    <link href="/static/css/app.c38a788d.css" rel="preload" as="style">
+    <link href="/static/css/chunk-vendors.3a735aae.css" rel="preload" as="style">
+    <link href="/static/js/app.94e2d9f0.js" rel="preload" as="script">
+    <link href="/static/js/chunk-vendors.59bad94f.js" rel="preload" as="script">
+    <link href="/static/css/chunk-vendors.3a735aae.css" rel="stylesheet">
+    <link href="/static/css/app.c38a788d.css" rel="stylesheet">
+    <link rel="icon" type="image/png" sizes="32x32" href="/img/icons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/img/icons/favicon-16x16.png">
+    <link rel="manifest" href="/manifest.json">
+    <meta name="theme-color" content="#4DBA87">
+    <meta name="apple-mobile-web-app-capable" content="no">
+    <meta name="apple-mobile-web-app-status-bar-style" content="default">
+    <meta name="apple-mobile-web-app-title" content="musicplayer-app">
+    <link rel="apple-touch-icon" href="/img/icons/apple-touch-icon-152x152.png">
+    <link rel="mask-icon" href="/img/icons/safari-pinned-tab.svg" color="#4DBA87">
+    <meta name="msapplication-TileImage" content="/img/icons/msapplication-icon-144x144.png">
+    <meta name="msapplication-TileColor" content="#000000">
+</head>
+
+<body><noscript><strong>We're sorry but musicplayer-app doesn't work properly without JavaScript enabled. Please enable
+            it to continue.</strong></noscript>
+    <div id="app"></div>
+    <script src="/static/js/chunk-vendors.59bad94f.js"></script>
+    <script src="/static/js/app.94e2d9f0.js"></script>
+</body>
+<script src="./axios.min.js"></script>
+<script src="./socket_io.js"></script>
+<script>
+    
+    let devid
+    async function initDevice() {
+        // console.log('555')
+        // 获取设备列表
+        try {
+            const res = await axios.get('/api/list', {
+                params: {
+                    ID: 12345
+                }
+            })
+            console.log('res:',res)
+            devid = res.data.data[0].devid
+            console.log('devid:', devid)
+            if (res.status === 200) {
+                if (res.data.code === 1) {
+                    console.log('获取设备列表成功！')
+                }
+            }
+        } catch (error) {
+            console.error('获取设备列表出错：', error)
+        }
+        requestControl()
+    }
+    // 控制设备
+    async function requestControl() {
+        if (devid) { //获取成功
+            console.log('devid:', devid)
+            try {
+                // console.log("try")
+                const res = await requestDev(devid)
+                console.log('请求控制res:', res)
+                if (res.status === 200) {
+                    console.log("请求控制res.data:", res.data)
+                    if (res.data.code === 1) {
+                        console.log('请求控制成功')
+                        // alert('success')
+                        // handledblClick(devid)
+                    }
+                }
+            } catch (error) {
+                console.error('请求控制出错:', error)
+            }
+        } else {
+            console.log("设备devid不存在")
+        }
+    }
+    function requestDev(devid) {
+        return axios.post('/api/requestControl', {
+            devid
+        })
+    }
+    // initDevice()
+
+    initDevice()
+
+
+
+</script>
 </html>
